@@ -1,0 +1,10 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+db_volume
+.env
+build/
+node_modules/
+yarn.lock
