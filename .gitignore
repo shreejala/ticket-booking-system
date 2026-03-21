@@ -8,3 +8,6 @@ db_volume
 build/
 node_modules/
 yarn.lock
+package-lock.json
+requests/
+data/
