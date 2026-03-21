@@ -2,13 +2,16 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
+  Index,
 } from "typeorm";
 import { TicketTier } from "./TicketTier";
 
 @Entity()
+@Index(["name", "venue"])
+@Index(["eventDate"])
 export class Event {
   @PrimaryGeneratedColumn("uuid")
   id: string;

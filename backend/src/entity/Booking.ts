@@ -2,9 +2,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToOne,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
+  ManyToOne,
+  Index,
+  Check,
 } from "typeorm";
 import { Event } from "./Event";
 import { TicketTier } from "./TicketTier";
@@ -16,16 +18,24 @@ export enum BookingStatus {
 }
 
 @Entity()
+@Check(`"quantity" > 0`)
+@Check(`"totalAmount" > 0`)
+@Index(["userEmail", "event"])
+@Index(["ticketTier", "status"])
 export class Booking {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  userEmail: string
+  @Index()
+  @Column({ type: "varchar", length: 255 })
+  userEmail: string;
 
   @Column({ type: "int" })
   quantity: number;
   
+  @Column({ type: "decimal", precision: 10, scale: 2 })
+  totalAmount: number;
+
   @Column({
     type: "enum",
     enum: BookingStatus,

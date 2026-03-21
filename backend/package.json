@@ -4,11 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -w",
-    "dev": "nodemon build/index.js",
-    "start:dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
+    "dev": "node --watch --env-file=.env --require ts-node/register src/index.ts",
     "build": "tsc",
-    "start": "ts-node src/index.ts",
+    "start": "node --env-file=.env dist/index.js",
     "typeorm": "typeorm-ts-node-commonjs -d src/data-source.ts",
     "migration:generate": "npm run typeorm migration:generate src/migrations/init",
     "migration:run": "npm run typeorm migration:run",
