@@ -52,6 +52,7 @@ export const bookTicket = async (req: Request<{}, {}, BookingBody>, res: Respons
     }
 
     // pessimistic_write on ticket tier to block concurrent requests
+    // This blocks other transactions from reading or writing the same ticket tier until the current transaction is completed, ensuring that the available quantity is accurately updated.
     const ticketTier = await queryRunner.manager.findOne(TicketTier, {
       where: { id: ticketTierId, event: { id: eventId } },
       lock: { mode: "pessimistic_write" },
