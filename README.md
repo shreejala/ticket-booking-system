@@ -63,11 +63,12 @@ A full-stack ticket booking application — React + TypeScript frontend with a c
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the Repository and checkout to develop for the latest branch
 
 ```bash
 git clone <your-repo-url>
 cd <repo-name>
+git checkout develop
 ```
 
 ---
