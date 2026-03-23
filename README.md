@@ -253,3 +253,13 @@ npm run build
 ```
 
 ---
+
+## Postman collection and mock data to seed the database
+
+```
+├── data/
+    ├── postman/
+    │   └── Ticket Booking.postman_collection.json
+    └── events.json  
+
+```

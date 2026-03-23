@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Summer Music Festival",
+    "venue": "Kathmandu Stadium",
+    "eventDate": "2026-06-15T18:00:00.000Z",
+    "ticketTiers": [
+      { "name": "VIP", "price": 100, "totalQuantity": 50 },
+      { "name": "FRONT_ROW", "price": 50, "totalQuantity": 100 },
+      { "name": "GA", "price": 10, "totalQuantity": 500 }
+    ]
+  },
+  {
+    "name": "Tech Conference 2026",
+    "venue": "Convention Center Kathmandu",
+    "eventDate": "2026-07-10T09:00:00.000Z",
+    "ticketTiers": [
+      { "name": "VIP", "price": 100, "totalQuantity": 30 },
+      { "name": "FRONT_ROW", "price": 50, "totalQuantity": 80 },
+      { "name": "GA", "price": 10, "totalQuantity": 300 }
+    ]
+  },
+  {
+    "name": "Stand-Up Comedy Night",
+    "venue": "City Hall Auditorium",
+    "eventDate": "2026-05-20T19:30:00.000Z",
+    "ticketTiers": [
+      { "name": "VIP", "price": 100, "totalQuantity": 20 },
+      { "name": "FRONT_ROW", "price": 50, "totalQuantity": 60 },
+      { "name": "GA", "price": 10, "totalQuantity": 200 }
+    ]
+  },
+  {
+    "name": "Food Carnival",
+    "venue": "Bhrikutimandap Grounds",
+    "eventDate": "2026-08-05T11:00:00.000Z",
+    "ticketTiers": [
+      { "name": "VIP", "price": 100, "totalQuantity": 40 },
+      { "name": "FRONT_ROW", "price": 50, "totalQuantity": 120 },
+      { "name": "GA", "price": 10, "totalQuantity": 600 }
+    ]
+  },
+  {
+    "name": "Startup Pitch Event",
+    "venue": "Startup Hub Nepal",
+    "eventDate": "2026-09-01T10:00:00.000Z",
+    "ticketTiers": [
+      { "name": "VIP", "price": 100, "totalQuantity": 25 },
+      { "name": "FRONT_ROW", "price": 50, "totalQuantity": 70 },
+      { "name": "GA", "price": 10, "totalQuantity": 250 }
+    ]
+  }
+]
