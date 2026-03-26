@@ -13,6 +13,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "erasableSyntaxOnly": true
+    "erasableSyntaxOnly": false
   }
 }
