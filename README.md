@@ -5,6 +5,7 @@
 - **1,000,000 users per day** using the app
 - **50,000 users online at the same time** at peak
 - **No two users should ever book the same seat** at the same time
+- **Availability target 99.99%**
 
 ---
 
@@ -100,3 +101,13 @@ With indexes, a lookup that takes 200ms on 100,000 rows takes ~1ms.
 | 1M DAU / 50K concurrent | Multiple Express instances + load balancer + Redis cache |
 | Booking p95 < 500ms | Lean booking handler + database indexes |
 | No double booking | TypeORM `PESSIMISTIC_WRITE` lock |
+
+## 4. Checklist to Get Close to 99.99% Availability target
+
+- [ ] `restart: always` on all Docker containers
+- [ ] Health check endpoint (`GET /health`) so the load balancer can detect a dead instance
+- [ ] At least 2 instances of the Express app running at all times
+- [ ] Automated database backups enabled
+- [ ] Deploy during low-traffic hours
+- [ ] Test rollback before you need it — know how to go back to the previous version fast
+- [ ] Set up uptime monitoring (UptimeRobot is free — alerts by email when the app is down)
