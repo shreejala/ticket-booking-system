@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "05fc8ac4-79ba-48f4-83af-9d9d92bd5426",
+    "name": "Ticket Booking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6109376"
+  },
+  "item": [
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Seed Events",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"events\": [\n  {\n    \"name\": \"Summer Music Festival\",\n    \"venue\": \"Kathmandu Stadium\",\n    \"eventDate\": \"2026-06-15T18:00:00.000Z\",\n    \"ticketTiers\": [\n      { \"name\": \"VIP\", \"price\": 100, \"totalQuantity\": 50 },\n      { \"name\": \"FRONT_ROW\", \"price\": 50, \"totalQuantity\": 100 },\n      { \"name\": \"GA\", \"price\": 10, \"totalQuantity\": 500 }\n    ]\n  },\n  {\n    \"name\": \"Tech Conference 2026\",\n    \"venue\": \"Convention Center Kathmandu\",\n    \"eventDate\": \"2026-07-10T09:00:00.000Z\",\n    \"ticketTiers\": [\n      { \"name\": \"VIP\", \"price\": 100, \"totalQuantity\": 30 },\n      { \"name\": \"FRONT_ROW\", \"price\": 50, \"totalQuantity\": 80 },\n      { \"name\": \"GA\", \"price\": 10, \"totalQuantity\": 300 }\n    ]\n  },\n  {\n    \"name\": \"Stand-Up Comedy Night\",\n    \"venue\": \"City Hall Auditorium\",\n    \"eventDate\": \"2026-05-20T19:30:00.000Z\",\n    \"ticketTiers\": [\n      { \"name\": \"VIP\", \"price\": 100, \"totalQuantity\": 20 },\n      { \"name\": \"FRONT_ROW\", \"price\": 50, \"totalQuantity\": 60 },\n      { \"name\": \"GA\", \"price\": 10, \"totalQuantity\": 200 }\n    ]\n  },\n  {\n    \"name\": \"Food Carnival\",\n    \"venue\": \"Bhrikutimandap Grounds\",\n    \"eventDate\": \"2026-08-05T11:00:00.000Z\",\n    \"ticketTiers\": [\n      { \"name\": \"VIP\", \"price\": 100, \"totalQuantity\": 40 },\n      { \"name\": \"FRONT_ROW\", \"price\": 50, \"totalQuantity\": 120 },\n      { \"name\": \"GA\", \"price\": 10, \"totalQuantity\": 600 }\n    ]\n  },\n  {\n    \"name\": \"Startup Pitch Event\",\n    \"venue\": \"Startup Hub Nepal\",\n    \"eventDate\": \"2026-09-01T10:00:00.000Z\",\n    \"ticketTiers\": [\n      { \"name\": \"VIP\", \"price\": 100, \"totalQuantity\": 25 },\n      { \"name\": \"FRONT_ROW\", \"price\": 50, \"totalQuantity\": 70 },\n      { \"name\": \"GA\", \"price\": 10, \"totalQuantity\": 250 }\n    ]\n  }\n]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/event-service/seed-events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "event-service",
+                "seed-events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/event-service/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "event-service",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Event by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/event-service/events/69f50fb7-c827-4351-a997-a352cf3722ec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "event-service",
+                "events",
+                "69f50fb7-c827-4351-a997-a352cf3722ec"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Book ticket",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"eventId\": \"69f50fb7-c827-4351-a997-a352cf3722ec\",\n    \"ticketTierId\": \"b87285e0-698d-4bea-bff0-e657c58addaf\",\n    \"quantity\": 2,\n    \"userEmail\": \"shrezatldr@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/booking-service/book-ticket",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "booking-service",
+                "book-ticket"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all booked tickets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/booking-service/get-bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "booking-service",
+                "get-bookings"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "shrezatldr@gmail.com",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

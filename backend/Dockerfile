@@ -2,14 +2,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package*.json ./
 
-RUN npm install -g nodemon
+RUN RUN npm ci
 
 COPY . .
 
-RUN yarn install
-
 EXPOSE 3000
 
-CMD ["yarn", "start:dev"]
+CMD ["npm", "run", "dev"]
